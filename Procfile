@@ -1,1 +1,1 @@
-web: build/index.js
+web: tsc | node build/index.js
