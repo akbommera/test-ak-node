@@ -15,7 +15,7 @@ res.send('pong');
 })
 
 var server = app.listen(process.env.PORT || 5000, () => {
-    console.log(`Node Server litening on http://localhost:${PORT}`);
+    console.log(`Node Server litening on http://localhost:${process.env.PORT || 5000}`);
 })
 app.use(express.static('coverage'));
 

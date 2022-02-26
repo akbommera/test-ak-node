@@ -29,14 +29,13 @@ const app = (0, express_1.default)();
 const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
-const PORT = 3000;
 const autoRoutes = require('express-auto-routes')(app);
 autoRoutes((0, path_1.join)(__dirname, './controllers'));
 app.get('/ping', (req, res) => {
     res.send('pong');
 });
-var server = app.listen(PORT, () => {
-    console.log(`Node Server litening on http://localhost:${PORT}`);
+var server = app.listen(process.env.PORT || 5000, () => {
+    console.log(`Node Server litening on http://localhost:${process.env.PORT || 5000}`);
 });
 app.use(express_1.default.static('coverage'));
 module.exports = { app: app, server };
