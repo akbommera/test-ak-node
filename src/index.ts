@@ -7,8 +7,6 @@ const cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json())
 
-const PORT = process.env.PORT || 3000
-
 const autoRoutes = require('express-auto-routes')(app);
 autoRoutes(join(__dirname, './controllers'));
 
@@ -16,7 +14,7 @@ app.get('/ping', (req, res) => {
 res.send('pong');
 })
 
-var server = app.listen(PORT, () => {
+var server = app.listen(process.env.PORT || 5000, () => {
     console.log(`Node Server litening on http://localhost:${PORT}`);
 })
 app.use(express.static('coverage'));
