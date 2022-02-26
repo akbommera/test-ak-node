@@ -1,1 +1,1 @@
-web: tsc | node build/index.js
+web: npm start
